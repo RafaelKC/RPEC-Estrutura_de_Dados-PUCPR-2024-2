@@ -1,33 +1,29 @@
-import Rkc.Stack.DynamicStack;
-import Rkc.Stack.StaticStack;
-
+import Rkc.Queue.DynamicQueue;
+import Rkc.Queue.StaticQueue;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        DynamicStack<String> stack = new DynamicStack<String>();
-        System.out.println(stack.isEmpty());
+        DynamicQueue<String> queue = new DynamicQueue<String>();
+        System.out.println(queue.isEmpty());
 
-        String[] itens = new String[6];
-        itens[0] = "A";
-        itens[1] = "B";
-        itens[2] = "C";
-        itens[3] = "E";
-        itens[4] = "F";
-        itens[5] = "G";
+        queue.add("A");
+        queue.add("B");
+        queue.add("C");
+        queue.add("E");
+        queue.add("F");
+        queue.add("G");
+        queue.add("H");
 
+        System.out.println(queue.isEmpty());
+        String removed = queue.remove();
+        removed = queue.remove();
+        removed = queue.remove();
+        removed = queue.remove();
+        removed = queue.remove();
 
-        stack.pushRange(itens);
-
-        System.out.println(stack.currentSize());
-        System.out.println(stack.isEmpty());
-        System.out.println(stack.peek());
-        System.out.println(stack.currentSize());
-        System.out.println(stack.pop());
-        System.out.println(stack.currentSize());
-        stack.clear();
-        System.out.println(stack.isEmpty());
-        System.out.println(stack.currentSize());
+        System.out.println(removed);
+        System.out.println(queue.isEmpty());
 
     }
 }
