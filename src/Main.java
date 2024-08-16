@@ -1,29 +1,27 @@
-import Rkc.Queue.DynamicQueue;
-import Rkc.Queue.StaticQueue;
+import Rkc.Queue.CircleQueue;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        DynamicQueue<String> queue = new DynamicQueue<String>();
+        CircleQueue<String> queue = new CircleQueue<String>(5);
         System.out.println(queue.isEmpty());
+        System.out.println(queue.isFull());
 
         queue.add("A");
         queue.add("B");
         queue.add("C");
         queue.add("E");
         queue.add("F");
+
+
+        queue.remove();
+        queue.remove();
+
         queue.add("G");
-        queue.add("H");
+        queue.remove();
+        queue.add("G");
 
         System.out.println(queue.isEmpty());
-        String removed = queue.remove();
-        removed = queue.remove();
-        removed = queue.remove();
-        removed = queue.remove();
-        removed = queue.remove();
-
-        System.out.println(removed);
-        System.out.println(queue.isEmpty());
-
+        System.out.println(queue.isFull());
     }
 }
