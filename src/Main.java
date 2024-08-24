@@ -1,24 +1,17 @@
-import Rkc.Queue.CircleQueue;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Rkc.List.StaticList;
+
 public class Main {
     public static void main(String[] args) {
-        CircleQueue<String> queue = new CircleQueue<String>(5);
+        StaticList<String> queue = new StaticList<String>(5);
         System.out.println(queue.isEmpty());
         System.out.println(queue.isFull());
 
-        queue.add("A");
-        queue.add("B");
-        queue.add("C");
-        queue.add("E");
-        queue.add("F");
-
-
-        queue.remove();
-        queue.remove();
-
         queue.add("G");
-        queue.remove();
+        queue.add("G", 0);
+        queue.add("G");
+        queue.add("G");
+        queue.add("G");
+        queue.remove(0);
         queue.add("G");
 
         System.out.println(queue.isEmpty());
