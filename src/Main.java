@@ -1,20 +1,23 @@
-import Rkc.List.StaticList;
+import Rkc.List.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        StaticList<String> queue = new StaticList<String>(5);
+        LinkedList<String> queue = new LinkedList<String>();
         System.out.println(queue.isEmpty());
-        System.out.println(queue.isFull());
 
+        queue.add("A"); //1
+        queue.add("B"); //2
+        queue.add("C"); //3
+        queue.add("D"); //4
+        queue.add("E", 0); //0
+        queue.add("F", 2);
         queue.add("G");
-        queue.add("G", 0);
-        queue.add("G");
-        queue.add("G");
-        queue.add("G");
+        queue.add("H");
         queue.remove(0);
-        queue.add("G");
+        queue.remove(queue.getSize()-1);
+        queue.remove(queue.getSize()-2);
+        queue.remove(100000);
 
         System.out.println(queue.isEmpty());
-        System.out.println(queue.isFull());
     }
 }
