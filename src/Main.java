@@ -1,23 +1,18 @@
-import Rkc.List.LinkedList;
+import Rkc.FloofFill.FloodFill;
+import Rkc.FloofFill.Pixel;
+
+import java.awt.*;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        LinkedList<String> queue = new LinkedList<String>();
-        System.out.println(queue.isEmpty());
+    public static void main(String[] args) throws IOException {
+     var path = "src/img.png";
 
-        queue.add("A"); //1
-        queue.add("B"); //2
-        queue.add("C"); //3
-        queue.add("D"); //4
-        queue.add("E", 0); //0
-        queue.add("F", 2);
-        queue.add("G");
-        queue.add("H");
-        queue.remove(0);
-        queue.remove(queue.getSize()-1);
-        queue.remove(queue.getSize()-2);
-        queue.remove(100000);
+     var initialPixel = new Pixel(50, 50);
+     var rgb = new Color(50, 0, 50);
 
-        System.out.println(queue.isEmpty());
+     var floodFill = new FloodFill(path);
+     floodFill.applyFloodFill(initialPixel, rgb);
+     floodFill.saveImage(String.format(path));
     }
 }
