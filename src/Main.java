@@ -9,10 +9,10 @@ public class Main {
      var path = "src/img.png";
 
      var initialPixel = new Pixel(50, 50);
-     var rgb = new Color(50, 0, 50);
+     var rgb = new Color(0, 211, 230);
 
      var floodFill = new FloodFill(path);
      floodFill.applyFloodFill(initialPixel, rgb);
-     floodFill.saveImage(String.format(path));
+     floodFill.showResult();
     }
 }
