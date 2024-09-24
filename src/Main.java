@@ -1,4 +1,6 @@
-import FloodFill.FloodFill;
+import Rkc.FloofFill.FloodFill;
+import Rkc.FloofFill.FloodFillQueue;
+import Rkc.FloofFill.FloodFillStack;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -28,13 +30,22 @@ public class Main {
         System.out.print("Escolha uma velocidade de 0-10, sendo [0] MUITO devagar e [10] rapido: ");
         int velocidade = scanner.nextInt();
 
-        FloodFill floodFill = new FloodFill(x, y, cor, img, velocidade);
+        System.out.print("Escolha uma qual estrutura de dados você quer: \n1 - Stack \n2 - Queue \n");
+        System.out.print("Digite o indice da estrutura que deseja usar: ");
+        int estrutura = scanner.nextInt();
+
+        FloodFill floodFill;
+
+        if (estrutura == 1) {
+            floodFill = new FloodFillStack(x, y, cor, img, velocidade);
+        } else {
+            floodFill = new FloodFillQueue(x, y, cor, img, velocidade);
+        }
 
         try {
             floodFill.start();
         } finally {
             ImageIO.write(img, "png", outputImage);
-
         }
 
     }
