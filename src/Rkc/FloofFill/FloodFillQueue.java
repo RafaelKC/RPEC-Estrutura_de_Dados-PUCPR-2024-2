@@ -7,7 +7,8 @@ import java.awt.image.BufferedImage;
 public class FloodFillQueue extends FloodFill {
 
     public FloodFillQueue(int x, int y, int cor, BufferedImage img, int velocidade) {
-        super(x, y, cor, img, velocidade);
+        super(x, y, cor, img, velocidade, "Queue");
+        this.frame.setLocation(1000, 500);
     }
 
     public void start() {

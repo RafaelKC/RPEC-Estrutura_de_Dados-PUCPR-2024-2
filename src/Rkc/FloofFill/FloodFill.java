@@ -13,7 +13,7 @@ public abstract class FloodFill {
     JFrame frame = new JFrame();
     int velocidade;
 
-    public FloodFill(int x, int y, int cor, BufferedImage img, int velocidade) {
+    public FloodFill(int x, int y, int cor, BufferedImage img, int velocidade, String tituloJanala) {
         this.pixelInicial = new Pixel(x, y, img.getRGB(x, y));
         this.img = img;
         this.velocidade = velocidade;
@@ -37,6 +37,8 @@ public abstract class FloodFill {
         frame.getContentPane().add(new JLabel(new ImageIcon(img)));
         frame.pack();
         frame.setVisible(true);
+
+        frame.setTitle(tituloJanala);
     }
 
     public abstract void start();

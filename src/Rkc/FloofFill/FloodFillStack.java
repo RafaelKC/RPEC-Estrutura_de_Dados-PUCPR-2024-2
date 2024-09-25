@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 public class FloodFillStack extends FloodFill {
 
     public FloodFillStack(int x, int y, int cor, BufferedImage img, int velocidade) {
-        super(x, y, cor, img, velocidade);
+        super(x, y, cor, img, velocidade, "Stack");
     }
 
     public void start() {

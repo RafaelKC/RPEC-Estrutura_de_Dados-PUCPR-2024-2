@@ -10,10 +10,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        File inputImage = new File("./img.png");
-        BufferedImage img = ImageIO.read(inputImage);
+        File inputImageStack = new File("./img-stack.png");
+        BufferedImage imgStack = ImageIO.read(inputImageStack);
 
-        File outputImage = new File("./resultado.png");
+        File inputImageQueue = new File("./img-queue.png");
+        BufferedImage imgQueue = ImageIO.read(inputImageQueue);
+
+        File outputImageStack = new File("./resultado-stack.png");
+        File outputImageQueue = new File("./resultado-queue.png");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -30,22 +34,26 @@ public class Main {
         System.out.print("Escolha uma velocidade de 0-10, sendo [0] MUITO devagar e [10] rapido: ");
         int velocidade = scanner.nextInt();
 
-        System.out.print("Escolha uma qual estrutura de dados você quer: \n1 - Stack \n2 - Queue \n");
+        System.out.print("Escolha uma qual estrutura de dados você quer: \n1 - Stack \n2 - Queue \n3 - Ambos \n");
         System.out.print("Digite o indice da estrutura que deseja usar: ");
         int estrutura = scanner.nextInt();
 
-        FloodFill floodFill;
-
-        if (estrutura == 1) {
-            floodFill = new FloodFillStack(x, y, cor, img, velocidade);
-        } else {
-            floodFill = new FloodFillQueue(x, y, cor, img, velocidade);
-        }
+        var stackThread = new ThreadFloodFillStack(x, y, cor, imgStack, velocidade);
+        var queueThread = new ThreadFloodFillQueue(x, y, cor, imgQueue, velocidade);
 
         try {
-            floodFill.start();
+            if (estrutura == 1) {
+                stackThread.start();
+            } else if(estrutura == 2) {
+                queueThread.start();
+            } else {
+
+                stackThread.start();
+                queueThread.start();
+            }
         } finally {
-            ImageIO.write(img, "png", outputImage);
+            ImageIO.write(imgStack, "png", outputImageStack);
+            ImageIO.write(imgQueue, "png", outputImageQueue);
         }
 
     }
