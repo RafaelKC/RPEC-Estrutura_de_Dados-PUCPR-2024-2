@@ -13,34 +13,34 @@ public class FloodFillStack extends FloodFill {
 
     public void start() {
         pintarPixel(this.pixelInicial, this.corPintar);
-        pintarAdjacentes(this.getAdjacentes(pixelInicial));
+        pintarAdjacentes(this.getAdjacentes(pixelInicial, new DynamicStack<>()));
         updateImage();
     }
 
     private void pintarAdjacentes(DynamicStack<Pixel> adjacentes) {
-        DynamicStack<Pixel> adjacentesDosAdjacentes = new DynamicStack<>();
-        while (!adjacentes.isEmpty()) {
-            Pixel p = adjacentes.pop();
-            this.pintarPixel(p, this.corPintar);
+        var pixel = adjacentes.pop();
 
-            DynamicStack<Pixel> ad = getAdjacentes(p);
-            while (!ad.isEmpty()) {
-                Pixel paa = ad.pop();
-                pintarPixel(paa, this.corPintar);
-                adjacentesDosAdjacentes.push(paa);
+        var count = 0;
+        while (pixel != null) {
+            this.pintarPixel(pixel, this.corPintar);
+            this.getAdjacentes(pixel, adjacentes);
+
+            if (adjacentes.isEmpty()) {
+                pixel = null;
+            } else {
+                pixel = adjacentes.pop();
+            }
+
+            count++;
+
+            if (count >= 60) {
+                count = 0;
+                updateImage();
             }
         }
-        updateImage();
-
-        if (!adjacentesDosAdjacentes.isEmpty()) {
-            pintarAdjacentes(adjacentesDosAdjacentes);
-        }
-
     }
 
-    private DynamicStack<Pixel> getAdjacentes(Pixel pixel) {
-        DynamicStack<Pixel> pixelsAdjacentes = new DynamicStack<>();
-
+    private DynamicStack<Pixel> getAdjacentes(Pixel pixel, DynamicStack<Pixel> pixelsAdjacentes) {
         Pixel pixelDeCima = new Pixel(pixel.getX(), pixel.getY() - 1);
         Pixel pixelDeBaixo = new Pixel(pixel.getX(), pixel.getY() + 1);
         Pixel pixelDaDireita = new Pixel(pixel.getX() + 1, pixel.getY());
