@@ -1,7 +1,3 @@
-import Rkc.FloofFill.FloodFill;
-import Rkc.FloofFill.FloodFillQueue;
-import Rkc.FloofFill.FloodFillStack;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;

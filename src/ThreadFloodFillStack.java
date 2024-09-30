@@ -1,5 +1,4 @@
-import Rkc.FloofFill.FloodFillQueue;
-import Rkc.FloofFill.FloodFillStack;
+import Rkc.FloodFill.FloodFillStack;
 
 import java.awt.image.BufferedImage;
 

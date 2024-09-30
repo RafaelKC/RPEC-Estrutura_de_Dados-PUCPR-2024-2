@@ -1,6 +1,5 @@
-package Rkc.FloofFill;
+package Rkc.FloodFill;
 
-import Rkc.Queue.DynamicQueue;
 import Rkc.Stack.DynamicStack;
 
 import java.awt.image.BufferedImage;

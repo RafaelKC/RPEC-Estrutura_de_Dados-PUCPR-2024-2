@@ -1,6 +1,4 @@
-package Rkc.FloofFill;
-
-import Rkc.Queue.DynamicQueue;
+package Rkc.FloodFill;
 
 import javax.swing.*;
 import java.awt.*;

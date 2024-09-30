@@ -1,4 +1,4 @@
-package Rkc.FloofFill;
+package Rkc.FloodFill;
 
 public class Pixel {
     private final int x;

@@ -1,4 +1,4 @@
-package Rkc.FloofFill;
+package Rkc.FloodFill;
 
 import Rkc.Queue.DynamicQueue;
 

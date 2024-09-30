@@ -1,8 +1,5 @@
-import Rkc.FloofFill.FloodFillQueue;
-import Rkc.FloofFill.FloodFillStack;
-import Rkc.FloofFill.Pixel;
+import Rkc.FloodFill.FloodFillQueue;
 
-import javax.swing.*;
 import java.awt.image.BufferedImage;
 
 public class ThreadFloodFillQueue extends Thread {
