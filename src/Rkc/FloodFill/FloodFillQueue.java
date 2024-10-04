@@ -50,25 +50,29 @@ public class FloodFillQueue extends FloodFill {
     }
 
     private void pintarAdjacentes(DynamicQueue<Pixel> adjacentes) {
-        DynamicQueue<Pixel> adjacentesDosAdjacentes = new DynamicQueue<>();
-        while (!adjacentes.isEmpty()) {
-            Pixel p = adjacentes.remove();
-            this.pintarPixel(p, this.corPintar);
+        while (true) {
+            DynamicQueue<Pixel> adjacentesDosAdjacentes = new DynamicQueue<>();
 
-            DynamicQueue<Pixel> ad = getAdjacentes(p);
-            while (!ad.isEmpty()) {
-                Pixel paa = ad.remove();
-                pintarPixel(paa, this.corPintar);
-                adjacentesDosAdjacentes.add(paa);
+            while (!adjacentes.isEmpty()) {
+                Pixel p = adjacentes.remove();
+                this.pintarPixel(p, this.corPintar);
+
+                DynamicQueue<Pixel> ad = getAdjacentes(p);
+                while (!ad.isEmpty()) {
+                    Pixel paa = ad.remove();
+                    pintarPixel(paa, this.corPintar);
+                    adjacentesDosAdjacentes.add(paa);
+                }
             }
-        }
-        updateImage();
 
-        if (!adjacentesDosAdjacentes.isEmpty()) {
-            pintarAdjacentes(adjacentesDosAdjacentes);
+            updateImage();
+            if (adjacentesDosAdjacentes.isEmpty()) {
+                break;
+            }
+            adjacentes = adjacentesDosAdjacentes;
         }
-
     }
+
 }
 
 

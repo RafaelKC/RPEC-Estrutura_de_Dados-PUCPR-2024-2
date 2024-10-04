@@ -21,8 +21,8 @@ public class LinkedList<T> implements IList<T> {
             base = head;
         } else {
             Node<T> node = new Node<>(t);
-            node.previus = this.head;
-            this.head.next = node;
+            node.setLeftChild(this.head);
+            this.head.setRightChild(node);
             this.head = node;
         }
         count++;
@@ -37,17 +37,17 @@ public class LinkedList<T> implements IList<T> {
             this.add(t);
         } else if (pos == 0) {
            Node<T> node = new Node<>(t);
-           node.next = this.base;
-           this.base.previus = node;
+           node.setRightChild(this.base);
+           this.base.setLeftChild(node);
            this.base = node;
            count++;
         } else {
             Node<T> node = new Node<>(t);
             Node<T> currentPos = this.getNode(pos);
-            node.previus = currentPos.previus;
-            node.next = currentPos;
-            node.previus.next = node;
-            currentPos.previus = node;
+            node.setLeftChild(currentPos.getLeftChild());
+            node.setRightChild(currentPos);
+            node.getLeftChild().setRightChild(node);
+            currentPos.setLeftChild(node);
             count++;
         }
 
@@ -60,16 +60,16 @@ public class LinkedList<T> implements IList<T> {
             return false;
         }
 
-        if (node.previus != null) {
-            node.previus.next = node.next;
+        if (node.getLeftChild() != null) {
+            node.getLeftChild().setRightChild(node.getRightChild());
         } else {
-            this.base = node.next;
+            this.base = node.getRightChild();
         }
-        if (node.next != null) {
-            node.next.previus = node.previus;
+        if (node.getRightChild() != null) {
+            node.getRightChild().setLeftChild(node.getLeftChild());
         }
         else {
-            this.head = node.previus;
+            this.head = node.getLeftChild();
         }
         count--;
         return true;
@@ -86,13 +86,13 @@ public class LinkedList<T> implements IList<T> {
         if (node == null) {
             throw new IndexOutOfBoundsException();
         }
-        node.data = t;
+        node.setValue(t);
     }
 
     @Override
     public T getData(int pos) {
         Node<T> node = getNode(pos);
-        return node != null ? node.data : null                                                                                                                                                                                                                  ;
+        return node != null ? node.getValue() : null                                                                                                                                                                                                                  ;
     }
 
     @Override
@@ -105,11 +105,11 @@ public class LinkedList<T> implements IList<T> {
         Node<T> node = this.base;
         int current = 0;
         while (current < count) {
-            if (node.data.equals(t)) {
+            if (node.getValue().equals(t)) {
                 return current;
             }
             current++;
-            node = node.next;
+            node = node.getRightChild();
         }
         return -1;
     }
@@ -119,11 +119,11 @@ public class LinkedList<T> implements IList<T> {
         Node<T> node = this.base;
         int current = 0;
         while (current < count) {
-            if (func.test(node.data)) {
+            if (func.test(node.getValue())) {
                 return current;
             }
             current++;
-            node = node.next;
+            node = node.getRightChild();
         }
         return -1;
     }
@@ -140,7 +140,7 @@ public class LinkedList<T> implements IList<T> {
             }
             if (reverse) current--;
             else current++;
-            node = reverse? node.previus : node.next;
+            node = reverse? node.getLeftChild() : node.getRightChild();
         }
         return null;
     }

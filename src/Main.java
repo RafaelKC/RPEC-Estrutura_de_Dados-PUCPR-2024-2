@@ -1,3 +1,5 @@
+import Rkc.CodigoMorse;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -6,6 +8,52 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("======= Estrutura de Dados ======");
+        System.out.println("1 - FloodFill usando queue e stack");
+        System.out.println("2 - Codigo morse com arvore binaria");
+        System.out.println();
+        System.out.print("Digite o indece da opcao que deseja: ");
+        int opcao = scanner.nextInt();
+        System.out.println();
+
+        switch (opcao){
+            case 1: FloodFillOption(scanner); break;
+            case 2: ArvoreBinariaOption(scanner); break;
+        }
+
+    }
+
+    private static void ArvoreBinariaOption(Scanner scanner) {
+        // .-.. ..- .. ... / --- - .- ...- .. ---
+        scanner.nextLine();
+
+        System.out.println("(obs: para 'espaco' use /) ");
+        System.out.print("Digite o codigo que deseja decodificar: ");
+
+        String morse = scanner.nextLine();
+        System.out.println();
+
+        CodigoMorse codigoMorse = new CodigoMorse();
+        System.out.println("Decodificado: ");
+        System.out.println(codigoMorse.decodificar(morse));
+
+        System.out.println("\n1 - Decodicar outro codigo\n2 - Encerrar");
+        System.out.print("Digite o indice: ");
+        int i = scanner.nextInt();
+        System.out.println();
+
+        switch (i){
+            case 1: ArvoreBinariaOption(scanner); break;
+            case 2: break;
+        }
+
+
+    }
+
+
+    static void FloodFillOption(Scanner scanner) throws IOException {
         File inputImageStack = new File("./img-stack.png");
         BufferedImage imgStack = ImageIO.read(inputImageStack);
 
@@ -15,7 +63,6 @@ public class Main {
         File outputImageStack = new File("./resultado-stack.png");
         File outputImageQueue = new File("./resultado-queue.png");
 
-        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o X do pixel inicial: ");
         int x = scanner.nextInt();
@@ -51,6 +98,6 @@ public class Main {
             ImageIO.write(imgStack, "png", outputImageStack);
             ImageIO.write(imgQueue, "png", outputImageQueue);
         }
-
     }
+
 }
