@@ -26,7 +26,7 @@ public class ArvoreMorse {
             ch.setData(alfabeto[i], 0);
             ch.setData(morse[i], 1);
 
-//               System.out.printf("%s -> %s\n", ch.getData(0), ch.getData(1));
+            // System.out.printf("%s -> %s\n", ch.getData(0), ch.getData(1));
 
             charParaCodigo.setData(ch, i);
         }

@@ -27,7 +27,6 @@ public class Main {
 
     private static void ArvoreBinariaOption(Scanner scanner) {
         try {
-            // .-.. ..- .. ... / --- - .- ...- .. ---
             scanner.nextLine();
 
             System.out.println("(obs: para 'espaco' use /) ");
@@ -50,7 +49,7 @@ public class Main {
                 case 2: break;
             }
         } catch (Exception e) {
-            System.out.print("Erro, caracter inválido");
+            System.out.print("Erro, caracter inválido.\n");
             ArvoreBinariaOption(scanner);
         }
     }

@@ -21,10 +21,16 @@ public class CodigoMorse {
                     if (s.equals(".")) {
                         nodeAtual = nodeAtual.getLeftChild();
                         continue;
+                    } else if (s.equals("-")) {
+                        nodeAtual = nodeAtual.getRightChild();
+                    } else {
+                        nodeAtual = null;
+                        break;
                     }
-                    nodeAtual = nodeAtual.getRightChild();
                 }
-                decodificado.append(nodeAtual.getValue());
+                if (nodeAtual != null) {
+                    decodificado.append(nodeAtual.getValue());
+                }
 
             }
             decodificado.append(" ");
