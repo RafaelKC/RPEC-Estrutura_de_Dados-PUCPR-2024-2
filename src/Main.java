@@ -26,30 +26,33 @@ public class Main {
     }
 
     private static void ArvoreBinariaOption(Scanner scanner) {
-        // .-.. ..- .. ... / --- - .- ...- .. ---
-        scanner.nextLine();
+        try {
+            // .-.. ..- .. ... / --- - .- ...- .. ---
+            scanner.nextLine();
 
-        System.out.println("(obs: para 'espaco' use /) ");
-        System.out.print("Digite o codigo que deseja decodificar: ");
+            System.out.println("(obs: para 'espaco' use /) ");
+            System.out.print("Digite o codigo que deseja decodificar: ");
 
-        String morse = scanner.nextLine();
-        System.out.println();
+            String morse = scanner.nextLine();
+            System.out.println();
 
-        CodigoMorse codigoMorse = new CodigoMorse();
-        System.out.println("Decodificado: ");
-        System.out.println(codigoMorse.decodificar(morse));
+            CodigoMorse codigoMorse = new CodigoMorse();
+            System.out.println("Decodificado: ");
+            System.out.println(codigoMorse.decodificar(morse));
 
-        System.out.println("\n1 - Decodicar outro codigo\n2 - Encerrar");
-        System.out.print("Digite o indice: ");
-        int i = scanner.nextInt();
-        System.out.println();
+            System.out.println("\n1 - Decodicar outro codigo\n2 - Encerrar");
+            System.out.print("Digite o indice: ");
+            int i = scanner.nextInt();
+            System.out.println();
 
-        switch (i){
-            case 1: ArvoreBinariaOption(scanner); break;
-            case 2: break;
+            switch (i){
+                case 1: ArvoreBinariaOption(scanner); break;
+                case 2: break;
+            }
+        } catch (Exception e) {
+            System.out.print("Erro, caracter inválido");
+            ArvoreBinariaOption(scanner);
         }
-
-
     }
 
 
