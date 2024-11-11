@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="testes-automatizados-robot">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/docs/testes-automatizados-robot.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

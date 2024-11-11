@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RPEC-Estrutura_de_Dados-PUCPR-2024-2.iml" filepath="$PROJECT_DIR$/RPEC-Estrutura_de_Dados-PUCPR-2024-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sort-hash.iml" filepath="$PROJECT_DIR$/sort-hash.iml" />
     </modules>
   </component>
 </project>
