@@ -67,11 +67,6 @@ public class Main3 {
         System.out.printf("Tempo total de busca (LoseLose): %.3f ms%n", totalSearchTimeLose / 1_000_000.0);
         System.out.printf("Tempo total de busca (Polinomial): %.3f ms%n", totalSearchTimePolinomial / 1_000_000.0);
 
-        System.out.printf("Tempo médio de inserção (LoseLose): %.3f ms%n", avgInsertionTimeLose / 1_000_000.0);
-        System.out.printf("Tempo médio de inserção (Polinomial): %.3f ms%n", avgInsertionTimePolinomial / 1_000_000.0);
-
-        System.out.printf("Tempo médio de busca (LoseLose): %.3f ms%n", avgSearchTimeLose / 1_000_000.0);
-        System.out.printf("Tempo médio de busca (Polinomial): %.3f ms%n", avgSearchTimePolinomial / 1_000_000.0);
 
         DefaultCategoryDataset datasetLoseLose = new DefaultCategoryDataset();
         Map<Integer, Integer> colisaoLose = loseLose.getColisoesPorIndice();

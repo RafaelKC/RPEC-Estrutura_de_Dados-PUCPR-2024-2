@@ -4,30 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e678cf75-6745-4289-8c01-ae179c1688a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_5_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/testes_automatizados_robot.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sort-hash.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EnhancedBarChart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/demo1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/demo2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rkc/TabelaHash/TabelaHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rkc/TabelaHash/TabelaHash.java" afterDir="false" />
-    </list>
+    <list default="true" id="e678cf75-6745-4289-8c01-ae179c1688a5" name="Changes" comment="geracao de graficos para colisao nas tabelas hash e de graficos de tempo em ms para sorting" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "luis-ota"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/RafaelKC/RPEC-Estrutura_de_Dados-PUCPR-2024-2.git",
+    "accountId": "7366c581-4130-4ad0-b559-931e60e667e6"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -41,9 +43,10 @@
     "Application.EnhancedBarChart.executor": "Run",
     "Application.Main2.executor": "Run",
     "Application.Main3.executor": "Run",
+    "Application.SortTestes.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "luis-edits-pro-relatorio",
     "last_opened_file_path": "/home/luis/dev/pucpr/sort-hash/docs/jfreechart-1.5.5.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -57,7 +60,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.SortTestes">
+  <component name="RunManager" selected="Application.Main3">
     <configuration name="Main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main2" />
       <module name="sort-hash" />
@@ -81,8 +84,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SortTestes" />
         <item itemvalue="Application.Main3" />
+        <item itemvalue="Application.SortTestes" />
         <item itemvalue="Application.Main2" />
       </list>
     </recent_temporary>
@@ -104,11 +107,24 @@
       <option name="presentableId" value="Default" />
       <updated>1731023624035</updated>
       <workItem from="1731023625706" duration="1594000" />
-      <workItem from="1731264258856" duration="15918000" />
+      <workItem from="1731264258856" duration="16349000" />
     </task>
+    <task id="LOCAL-00001" summary="geracao de graficos para colisao nas tabelas hash e de graficos de tempo em ms para sorting">
+      <option name="closed" value="true" />
+      <created>1731295647657</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731295647657</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="geracao de graficos para colisao nas tabelas hash e de graficos de tempo em ms para sorting" />
+    <option name="LAST_COMMIT_MESSAGE" value="geracao de graficos para colisao nas tabelas hash e de graficos de tempo em ms para sorting" />
   </component>
 </project>
