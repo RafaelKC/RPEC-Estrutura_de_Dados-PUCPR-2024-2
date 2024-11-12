@@ -76,15 +76,13 @@ public class SortTestes extends ApplicationFrame {
         plot.setDomainGridlinePaint(Color.GRAY);
         plot.setRangeGridlinePaint(Color.GRAY);
 
-        // Configuração das cores das barras
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
-        renderer.setSeriesPaint(0, new Color(0, 0, 255)); // Azul para Insertion Sort
-        renderer.setSeriesPaint(1, new Color(0, 128, 0)); // Verde para Bubble Sort
-        renderer.setSeriesPaint(2, new Color(255, 0, 0)); // Vermelho para Quick Sort
+        renderer.setSeriesPaint(0, new Color(0, 0, 255)); // Insertion
+        renderer.setSeriesPaint(1, new Color(0, 128, 0)); // Bubble
+        renderer.setSeriesPaint(2, new Color(255, 0, 0)); // Quick
 
-        renderer.setMaximumBarWidth(0.1); // Define a largura máxima das barras
+        renderer.setMaximumBarWidth(0.1);
 
-        // Estilização adicional
         plot.setOutlineVisible(false);
         plot.setInsets(new RectangleInsets(10, 10, 10, 10));
 
